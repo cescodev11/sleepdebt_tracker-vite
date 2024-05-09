@@ -1,0 +1,39 @@
+.home { 
+    padding: 20px; 
+    margin-top: 20px;
+    background-color: aquamarine;
+    text-align: center;
+    margin-left: auto;
+    width: 90%;
+    max-width: 960px;
+
+}
+
+.home h1 {
+    color: #333;
+}
+
+
+.home p {
+    color: #666;
+    font-size: 16px;
+    padding: 0 15px;  /* Padding helps to avoid text hitting the edges */
+}
+
+
+@media (max-width: 768px) {
+    .home p {
+        font-size: 14px;  /* Slightly smaller text on smaller screens */
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .home {
+        padding: 10px;  /* Reduce padding on very small devices */
+    }
+    .home h1 {
+        font-size: 20px;  /* Reduce heading size on small devices */
+    }
+}

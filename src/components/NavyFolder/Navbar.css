@@ -11,6 +11,12 @@ body {
     background-color: white;
     color:black;
     padding:10px 20px;
+    position: fixed; /* or 'absolute' */
+    top: 0;
+    left: 0; /* Align the left edge with the viewport */
+    right: 0; /* Align the right edge with the viewport */
+    width: 100%;
+    overflow: visible;
 }
 
 .navbar .web-logo {
@@ -20,6 +26,40 @@ body {
 .navbar ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 0px 80px;
     display: flex;
 }
+
+.navbar ul li a {
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+.navbar ul li a:hover {
+    background-color: #555;
+}
+
+.hamburgerIcon {
+    position: absolute;
+    right: 50px; 
+}
+
+
+@media (max-width: 768px) {
+    .hamburgerIcon {
+        display: block; /* show hamburger icon on smaller screens */
+    }
+
+    .nav-links {
+        display: none; /* hide links on smaller screens */
+        width: 100%; /* take full width */
+        flex-direction: column;
+    }
+
+    .nav-links.active {
+        display: flex; /* show links when active */
+    }
+}
+
