@@ -1,24 +1,37 @@
 import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
 
 const NavigationBar = () => {
-  const [isOpen, setisOpen] = useState(false);
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
 
   return (
     <nav className="navbar">
-      <div className="web-logo">SDT</div>
-      <ul className={`nav-links ${isOpen ? "active" : ""}`}>
-        <li>
-          <a href="#">View Sleep Hours</a>
-        </li>
-        <li>
-          <a href="#">Log New Hours</a>
-        </li>
-      </ul>
+      <div className="navbar-container">
+        <a href="/" className="navbar-logo">
+          SleepDebtTracker
+        </a>
 
-      <button className="hamburgerIcon" onClick={() => setisOpen(!isOpen)}>
-        &#9776; {/* Hamburger Icon */}
-      </button>
+        <div className="menu-icon" onClick={handleClick}>
+          {click ? <FaTimes /> : <FaBars />}
+        </div>
+
+        <ul className={click ? "nav-menu active" : "nav-menu"}>
+          <li className="nav-item">
+            <a href="/login" className="nav-links" onClick={closeMobileMenu}>
+              Login
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="/signup" className="nav-links" onClick={closeMobileMenu}>
+              Sign Up
+            </a>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };
