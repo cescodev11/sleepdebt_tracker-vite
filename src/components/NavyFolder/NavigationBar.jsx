@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
+import Login from "../SigninPage/Login";
 
 const NavigationBar = () => {
   const [click, setClick] = useState(false);
@@ -21,9 +23,13 @@ const NavigationBar = () => {
 
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
-            <a href="/login" className="nav-links" onClick={closeMobileMenu}>
+            <Link
+              to="/login"
+              className="nav-links-mobile"
+              onClick={closeMobileMenu}
+            >
               Login
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
             <a href="/signup" className="nav-links" onClick={closeMobileMenu}>
