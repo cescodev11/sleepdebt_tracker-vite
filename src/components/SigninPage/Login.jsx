@@ -1,4 +1,5 @@
 import React from "react";
+import { Icon } from "@iconify/react";
 import "./Login.css";
 const Login = () => {
   return (
@@ -8,8 +9,12 @@ const Login = () => {
         <input type="text" className="input-box" placeholder="email" />
         <input type="text" className="input-box" placeholder="Second Input" />
       </div>
-      <div>
-        <button>Sign in with Google</button>
+      <button className="google-button">
+        <Icon icon="logos:google-icon" /> Sign in with Google
+      </button>
+      <div className="bottom-section">
+        <p>create new account? Sign up</p>
+        <button className="login-button">Login</button>
       </div>
     </div>
   );
